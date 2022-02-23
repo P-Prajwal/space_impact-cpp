@@ -1,16 +1,11 @@
 #include<iostream>
-#include<windows.h>
+#include "screen.h"
 #include<conio.h>
-#include "spaceship.h"
+#include "spaceShip.h"
+#include "goto.h"
 using namespace std;
 
-//DECLARING OF GOTO FUNCTION TO MOVE LOCATIONS
-void gotoxy(int x, int y)
-{
-    COORD c={x,y};
-    SetConsoleCursorPosition (GetStdHandle(STD_OUTPUT_HANDLE),c);
-}
-
+bool gameOver=false;
 
 //CONSTRUTOR
 
@@ -24,13 +19,13 @@ starFighter::starFighter(int _x,int _y){
 void starFighter::paint(){
 
   	gotoxy(x,y);
-  	printf("%c%c%c",62,45);// It will look something like this >-
+  	printf("%c%c",62,45);// It will look something like this >-
 }
 
 //ERASE
 void starFighter::erase(){
 	gotoxy(x,y);
-	printf("%c%c%c",32,32,32);
+	printf("%c%c%c",32,32);
 }
 
 //NEW  LOCATION
@@ -44,8 +39,38 @@ starFighter spaceShip(5,15);
 
 
 //MOVE SHIP
-void starFighter::move(){ //when we hit a key the program must find next location on screen.
-if(kbhit()){
-	char key=getch();
-	erase(); //delete last location
-        
+void starFighter::move(){//we hit key to move ship
+ if(kbhit()){
+                char key=getch();
+                erase(); //delete last location
+                if(key == 'a'){
+                        if(x > leftLimit){
+                        x--;  //goes to the left
+                        }
+                }
+ 
+                if(key == 'd'){
+                        if(x < rightLimitShip){
+                        x++;   //goes to the righ
+                        }
+                }	
+              	if(key == 'w'){
+             		if(y > limiteSuperior){
+                	y--;    //goes up
+               		}
+             	}
+
+             	if(key == 's'){
+             		if(y < limiteInferior){
+                	y++;    //goes down
+               		}
+             	}
+
+	     	if(key == 'q'){
+			gameOver = true;
+		}
+             paint(); //painting the new location of the ship
+ 	}
+}
+
+//To be added bullet fucntion, working on it.
