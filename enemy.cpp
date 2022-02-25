@@ -1,8 +1,11 @@
 #include "enemy.h"
+#include<stdio.h>
 #include "screen.h"
 #include "goto.h"
+#include<iostream>
 using namespace std;
 
+int lefLimit=3;
 //Enemy Constructor
 enemy::enemy(int _x, int _y,  int _enemyStatus){
 
@@ -38,7 +41,7 @@ void enemy::erase(){
 void enemy::move(){
 //erasing the last location of the enemy
    erase();
-   if(x > leftLimit){
+   if(x > lefLimit){
       x--;
    	paint();
      }

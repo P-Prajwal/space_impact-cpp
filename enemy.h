@@ -6,7 +6,7 @@ class enemy{
    int enemyStatus;
    int enmyType=1; //this variable will decide the enemy different forms
    public:
-   enemy(int _x, int _y, int _enemyStatus); //constructor
+   enemy(int, int, int); //constructor
    void paint();
    void erase();
    void move();

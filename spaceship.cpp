@@ -1,11 +1,23 @@
 #include<iostream>
-#include "screen.h"
 #include<conio.h>
+#include<stdio.h>
 #include "spaceShip.h"
 #include "goto.h"
+
 using namespace std;
 
-bool gameOver=false;
+
+//GAME LIMITS
+//X
+int leftLimit = 3;
+int rightLimit = 117;
+//Y
+int limiteSuperior = 4;
+int limiteInferior = 29;
+//right limit of the ship, our ship cannot go so far to the right.
+int rightLimitShip = 35;
+int gameOver=false;
+
 
 //CONSTRUTOR
 
@@ -25,7 +37,7 @@ void starFighter::paint(){
 //ERASE
 void starFighter::erase(){
 	gotoxy(x,y);
-	printf("%c%c%c",32,32);
+	printf("%c%c",32,32);
 }
 
 //NEW  LOCATION
@@ -33,9 +45,6 @@ void starFighter::reset(int new_x, int new_y){
 	x=new_x;
 	y=new_y;
 }
-
-//CREATE SHIP HERE
-starFighter spaceShip(5,15);
 
 
 //MOVE SHIP

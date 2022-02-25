@@ -1,30 +1,7 @@
 #include "screen.h"
-#include<windows.h>
 #include "goto.h"
+#include<stdio.h>
 using namespace std;
-
-//to modify the window size
-bool windowAdjust(int a, int b) {
-	_COORD C;
-	C.X = a;
-	C.Y = b;
-
-	_SMALL_RECT Rect;
-	Rect.Top = 0;
-	Rect.Left = 0;
-	Rect.Right = a - 1;
-	Rect.Bottom = b - 1;
-
-	//it gets the console identifier
-	HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE);
-
-	// adjust the buffer to the new size
-	SetConsoleScreenBufferSize(Console, C);
-
-	// it changes console size.
-	SetConsoleWindowInfo(Console, TRUE, &Rect);
-	return TRUE;
-}
 
 void gamePlayFrame(){//this is game frame
 

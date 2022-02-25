@@ -3,12 +3,13 @@
 
 class starFighter{
 
+	int x,y;
 public:
-      starFighter(int _x,int _y);
+      starFighter(int,int);
       void paint();
       void erase();
       void move();
-      void reset(int hor, int ver);//this will reset the ship location if we loose a life
+      void reset(int, int);//this will reset the ship location if we loose a life
 int X(){return x;} //to get location of ship
 int Y(){return y;}
 

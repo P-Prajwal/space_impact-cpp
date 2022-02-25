@@ -1,10 +1,8 @@
-#include<windows.h>
 #include "goto.h"
-using namespace std;
+#include<stdio.h>
 
 void gotoxy(int x, int y){
-    COORD c={x,y};
-    SetConsoleCursorPosition (GetStdHandle(STD_OUTPUT_HANDLE),c);
+     printf("%c[%d;%df", 0x1B, y, x);
 }
 
 

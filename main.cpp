@@ -6,14 +6,23 @@
 using namespace std;
 
 int main(){
-
-	windowAdjust(122,133);
-
-	spaceship.paint();//Start painting ship
+        int life=3;
+//GAME LIMITS
+//X
+	int leftLimit = 3;
+	int rightLimit = 117;
+//Y
+	int limiteSuperior = 4;
+	int limiteInferior = 26;
+//right limit of the ship. our ship cannot go so far to the right.
+	int rightLimitShip = 35;
+	bool gameOver=false;
+	gamePlayFrame();
+        starFighter spaceShip(5,15);
+	spaceShip.paint();//Start painting ship
 
 	while(gameOver!=true){
-		gamePlayerFrame();
-		spaceship.move();
+		spaceShip.move();
 		
 		//Next bullet functions and enemy formation to be added, working on them.
 		
@@ -36,8 +45,6 @@ int main(){
 	 }
 
 	}
-
-	getch();
 	return 0;
 }
 	     

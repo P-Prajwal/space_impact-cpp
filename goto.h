@@ -1,1 +1,1 @@
-void gotoxy(int _x, int _y);
+void gotoxy(int, int);
