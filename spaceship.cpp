@@ -1,6 +1,6 @@
 #include<iostream>
-#include<conio.h>
 #include<stdio.h>
+#include<conio.h>
 #include "spaceShip.h"
 #include "goto.h"
 
@@ -49,7 +49,7 @@ void starFighter::reset(int new_x, int new_y){
 
 //MOVE SHIP
 void starFighter::move(){//we hit key to move ship
- if(kbhit()){
+if(kbhit()){
                 char key=getch();
                 erase(); //delete last location
                 if(key == 'a'){
@@ -79,7 +79,7 @@ void starFighter::move(){//we hit key to move ship
 			gameOver = true;
 		}
              paint(); //painting the new location of the ship
- 	}
+	}
 }
 
 //To be added bullet fucntion, working on it.
