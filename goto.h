@@ -1,1 +1,3 @@
-void gotoxy(int, int);
+
+extern "C" void gotoxy(int, int);
+

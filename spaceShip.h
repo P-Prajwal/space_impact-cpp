@@ -14,5 +14,4 @@ int X(){return x;} //to get location of ship
 int Y(){return y;}
 
 };
-
 #endif
